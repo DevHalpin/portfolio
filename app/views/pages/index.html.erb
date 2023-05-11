@@ -1,2 +1,187 @@
-<h1>Pages#index</h1>
-<p>Find me in app/views/pages/index.html.erb</p>
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <title>David Halpin</title>
+  </head>
+
+  <body>
+    <div id="front-page">
+      <div>
+        <div>
+                
+          <h1>&nbsp;&nbsp;Hello, My name is David.&nbsp;&nbsp;</h1>
+          <h1>I am a</h1>
+          <h2 class="quotes hidden">full-stack web developer.</h2>
+          <h2 class="quotes hidden">mentor.</h2>
+          <h2 class="quotes hidden">instructor.</h2>
+        </div>
+      </div>
+      <div>
+        <p>
+          <a href="#about-me">Find out more about me<br>
+            <span aria-hidden="true"></span>
+          </a>
+        </p>
+          
+      </div>
+    </div>
+
+    <div id="about-me">
+      <div>
+          <div>
+            <div>
+              <div>
+              <h2>Hobbyist Coder turned Professional Developer.</h2>
+              <br><h4>
+              Insert About Me Here</h4>
+              </div>
+              <div>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+
+    <div id="education-experience-skills">
+      <div>
+        <div>
+          <div>
+            <div>
+              <div>
+                <div>
+                  <div>
+                    <h3>Education</h3>                   
+                  </div>
+                </div>
+              <div>
+                <div>
+                  <h3>Experience</h3>                
+                </div>
+              </div>
+                <div>
+                  <div>
+                    <h3>Skills</h3>
+                      <div>
+                        <div>
+                        </div>
+                        <div>
+                        </div>
+                        <div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="middle-strip">
+        <div>
+          <div>
+            <div>
+              <div>
+                <h1>Projects</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="projects">
+        <div>
+          <div>
+            <div>
+              <div>
+            </div>
+            <div>
+            </div>
+            <div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="contact-me">
+      <div>
+        <div>
+	        <div>
+            <div>
+              <h2>Contact me</h2><br>
+              <div>
+                <form action="" method="post">
+                  <fieldset>
+                    <!-- Name input-->
+                    <div>
+                      <label for="name">Name</label>
+                      <div>
+                        <input id="name" name="name" type="text" placeholder="Your name" >
+                      </div>
+                    </div>
+                    <!-- Email input-->
+                    <div>
+                      <label for="email">E-mail</label>
+                      <div>
+                        <input id="email" name="email" type="text" placeholder="Your email">
+                      </div>
+                    </div>
+                    <!-- Message body -->
+                    <div>
+                      <label for="message">Message</label>
+                      <div>
+                        <textarea id="message" name="message" placeholder="Please enter your message here..." rows="5"></textarea>
+                      </div>
+                    </div>
+                    <!-- Form actions -->
+                    <div>
+                      <div>
+                        <button type="submit">Submit</button>
+                      </div>
+                    </div>
+                  </fieldset>
+                </form>
+              </div>
+            </div>
+	        </div>
+          <div>
+            <div>
+              <hr>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- quotes fade-in/out javascript -->
+    <script type="text/javascript">
+      const quotes = document.querySelectorAll('.quotes');
+      let quoteIndex = -1;
+
+      async function showNextQuote() {
+        const currentQuote = quotes[++quoteIndex % quotes.length];
+        currentQuote.style.opacity = 0;
+        currentQuote.style.display = 'block';
+
+        await new Promise(resolve => setTimeout(resolve, 200));
+
+        currentQuote.style.transition = 'opacity 2s';
+        currentQuote.style.opacity = 1;
+
+        await new Promise(resolve => setTimeout(resolve, 4000));
+
+        currentQuote.style.transition = 'opacity 2s';
+        currentQuote.style.opacity = 0;
+
+        await new Promise(resolve => setTimeout(resolve, 2000));
+
+        currentQuote.style.display = 'none';
+
+        await showNextQuote();
+      }
+
+     showNextQuote();
+    </script>
+  </body>
+</html>
